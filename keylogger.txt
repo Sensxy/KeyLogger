@@ -1,5 +1,5 @@
 /*This is where keyboard inputs are printed out*/
 
 
-
-password is 12345
+(ex)
+hi my name is ozan
